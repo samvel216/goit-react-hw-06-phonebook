@@ -1,0 +1,32 @@
+.ContactForm {
+  display: grid;
+}
+.ContactFormLabel {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.ContactFormInput {
+  margin-left: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 2px;
+  border: none;
+}
+.ContactFormButton {
+  border: none;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 25px;
+  background-color: #e9702a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.ContactFormButton:hover {
+  background-color: #ff5e00;
+  transform: scale(1.02);
+}

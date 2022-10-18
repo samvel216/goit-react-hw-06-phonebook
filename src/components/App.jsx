@@ -51,8 +51,8 @@ const SectionStyle = styled.div`
   box-sizing: border-box;
   padding: 15px;
   margin: 70px auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   border-radius: 5px;
-  background-color: #ebdacf;
+  background-color: #ebdac1;
 `;

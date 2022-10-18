@@ -1,0 +1,20 @@
+.item {
+  width: 85%;
+  font-size: 25px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  display: flex;
+  border-radius: 5px;
+}
+.button {
+  margin-right: 0;
+  width: 15%;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #fcb8b8;
+}
+.button:hover {
+  background-color: #f93636;
+  transform: scale(1.1);
+}
