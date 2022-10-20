@@ -5,40 +5,15 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
-import { useSelector, useDispatch } from 'react-redux';
-
-import { addContact, deleteContact } from 'redux/contacts-actions';
-import { changeFilter } from 'redux/filter-actions';
-import { getFilteredContacts } from 'redux/contacts-selectors';
-import { getFilter } from 'redux/filter-selector';
-
 const App = () => {
-  const contacts = useSelector(getFilteredContacts);
-  const filter = useSelector(getFilter);
-
-  const dispatch = useDispatch();
-
-  const newContact = (name, number) => {
-    const action = addContact(name, number);
-    dispatch(action);
-  };
-
-  const removeContact = payload => {
-    dispatch(deleteContact(payload));
-  };
-
-  const textFilter = ({ target }) => {
-    dispatch(changeFilter(target.value));
-  };
-
   return (
     <SectionStyle>
       <Section title="PhoneBook">
-        <ContactForm onSubmit={newContact} contacts={contacts} />
+        <ContactForm />
       </Section>
       <Section title="Contacts">
-        <Filter value={filter} onChange={textFilter} />
-        <ContactList contacts={contacts} onDelete={removeContact} />
+        <Filter />
+        <ContactList />
       </Section>
     </SectionStyle>
   );

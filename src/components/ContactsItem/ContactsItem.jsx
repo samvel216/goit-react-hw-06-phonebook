@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import * as contactsActions from '../../redux/contactsActions';
+import { useDispatch } from 'react-redux';
+import * as contactsActions from '../../redux/contacts/contactsActions';
 export function ContactItem({ contactId, name, number }) {
   const dispatch = useDispatch();
   return (

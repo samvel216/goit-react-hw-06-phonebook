@@ -1,12 +1,15 @@
 import { React } from 'react';
 import { useState } from 'react';
 import shortid from 'shortid';
-import PropTypes from 'prop-types';
-import styles from './ContactForm.module.css';
 
-const ContactForm = props => {
+import styles from './ContactForm.module.css';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/contacts/contacts-actions';
+export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const dispatch = useDispatch();
 
   const nameInputId = shortid.generate();
   const numberInputId = shortid.generate();
@@ -25,7 +28,11 @@ const ContactForm = props => {
   };
   const submitForm = e => {
     e.preventDefault();
-    props.onSubmit(name, number);
+    const newContact = (name, number) => {
+      const action = addContact(name, number);
+      dispatch(action);
+    };
+    newContact(name, number);
     reset();
   };
   const reset = () => {
@@ -68,9 +75,4 @@ const ContactForm = props => {
       </button>
     </form>
   );
-};
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
-export default ContactForm;
+}
